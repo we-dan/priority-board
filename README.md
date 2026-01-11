@@ -1,245 +1,245 @@
 # Priority Board
 
-A minimal, Material Design 3-inspired priority board for task management. Organize your work into "Now", "Next", and "Later" columns with a clean interface optimized for long-term use and low cognitive strain.
+En minimal, Material Design 3-inspirerad prioriteringstavla för uppgiftshantering. Organisera ditt arbete i kolumnerna "Nu", "Nästa" och "Senare" med ett rent gränssnitt optimerat för långsiktig användning och låg kognitiv belastning.
 
-## Features
+## Funktioner
 
-- **Three-column board**: Now, Next, Later for clear prioritization
-- **Task management**: Add, edit, move, and delete tasks with descriptions and timeframes
-- **Drag-and-drop**: Intuitive task reordering within and across columns
-- **Persistent storage**: Tasks saved to localStorage, survives page refreshes
-- **Theme support**: Light and dark themes with smooth transitions
-- **Responsive design**: Works seamlessly on desktop and mobile devices
-- **Accessible**: WCAG 2.2 compliant with keyboard navigation and screen reader support
+- **Tre-kolumn tavla**: Nu, Nästa, Senare för tydlig prioritering
+- **Uppgiftshantering**: Lägg till, redigera, flytta och ta bort uppgifter med beskrivningar och tidsramar
+- **Drag-and-drop**: Intuitiv omordning av uppgifter inom och mellan kolumner
+- **Beständig lagring**: Uppgifter sparas i localStorage, överlever siduppdateringar
+- **Temastöd**: Ljust och mörkt tema med mjuka övergångar
+- **Responsiv design**: Fungerar sömlöst på desktop och mobila enheter
+- **Tillgänglig**: WCAG 2.2-kompatibel med tangentbordsnavigering och skärmläsarstöd
 
-## Tech Stack
+## Teknisk Stack
 
-### Core
-- **React 19**: Latest React with automatic memoization via React Compiler
-- **TypeScript 5.9**: Strict type safety with modern TS features
-- **Vite 7.3**: Fast build tool with HMR for rapid development
+### Kärna
+- **React 19**: Senaste React med automatisk memoization via React Compiler
+- **TypeScript 5.9**: Strikt typsäkerhet med moderna TS-funktioner
+- **Vite 7.3**: Snabbt byggverktyg med HMR för snabb utveckling
 
 ### Styling
-- **Tailwind CSS 4.1**: CSS-first configuration with modern utilities
-- **CSS Variables**: Semantic theming system for light/dark modes
-- **Lucide React**: Consistent, minimal icon set
+- **Tailwind CSS 4.1**: CSS-first konfiguration med moderna utilities
+- **CSS Variables**: Semantiskt temasystem för ljusa/mörka lägen
+- **Lucide React**: Konsekvent, minimal ikonuppsättning
 
-### UI Components
-- **Radix UI**: Accessible component primitives (@radix-ui/react-slot)
-- **CVA**: Class Variance Authority for component variants
-- **Tailwind Merge**: Intelligent class merging utility
+### UI-komponenter
+- **Radix UI**: Tillgängliga komponentprimitiver (@radix-ui/react-slot)
+- **CVA**: Class Variance Authority för komponentvarianter
+- **Tailwind Merge**: Intelligent klasssammanslagningsverktyg
 
-## Project Structure
+## Projektstruktur
 
 ```
 priority-board/
 ├── src/
-│   ├── app.tsx                    # Root app component
-│   ├── main.tsx                   # Application entry point
+│   ├── app.tsx                    # Rot-appkomponent
+│   ├── main.tsx                   # Applikationens startpunkt
 │   ├── types/
-│   │   └── task.ts                # Task type definitions
+│   │   └── task.ts                # Typdefinitioner för uppgifter
 │   ├── hooks/
-│   │   └── use-local-storage.ts   # Persistent state hook
+│   │   └── use-local-storage.ts   # Hook för beständig lagring
 │   ├── components/
-│   │   ├── board.tsx              # Main board container
-│   │   ├── column.tsx             # Column component (Now/Next/Later)
-│   │   ├── task-card.tsx          # Individual task card
-│   │   ├── add-task-form.tsx      # Task creation form
-│   │   ├── theme-toggle.tsx       # Light/dark theme switcher
+│   │   ├── board.tsx              # Huvudtavla-container
+│   │   ├── column.tsx             # Kolumnkomponent (Nu/Nästa/Senare)
+│   │   ├── task-card.tsx          # Individuellt uppgiftskort
+│   │   ├── add-task-form.tsx      # Formulär för att skapa uppgifter
+│   │   ├── theme-toggle.tsx       # Ljus/mörk temaväxlare
 │   │   ├── providers/
-│   │   │   └── theme.tsx          # Theme context provider
+│   │   │   └── theme.tsx          # Tema context provider
 │   │   └── ui/
-│   │       ├── button.tsx         # Reusable button component
-│   │       └── card.tsx           # Reusable card component
+│   │       ├── button.tsx         # Återanvändbar knappkomponent
+│   │       └── card.tsx           # Återanvändbar kortkomponent
 │   ├── lib/
-│   │   └── utils.ts               # Utility functions (cn helper)
+│   │   └── utils.ts               # Hjälpfunktioner (cn helper)
 │   └── styles/
-│       └── global.css             # Global styles and CSS variables
-├── package.json                    # Dependencies and scripts
-├── vite.config.ts                  # Vite configuration
-├── tsconfig.json                   # TypeScript configuration
-├── components.json                 # shadcn/ui configuration
-└── postcss.config.js               # PostCSS configuration
+│       └── global.css             # Globala stilar och CSS-variabler
+├── package.json                    # Beroenden och skript
+├── vite.config.ts                  # Vite-konfiguration
+├── tsconfig.json                   # TypeScript-konfiguration
+├── components.json                 # shadcn/ui-konfiguration
+└── postcss.config.js               # PostCSS-konfiguration
 ```
 
-## Getting Started
+## Kom Igång
 
-### Prerequisites
-- **Node.js**: 18.x or higher
-- **npm**: 9.x or higher (or pnpm/yarn)
+### Förkunskaper
+- **Node.js**: 18.x eller högre
+- **npm**: 9.x eller högre (eller pnpm/yarn)
 
 ### Installation
 
 ```bash
-# Clone the repository
+# Klona repositoryt
 git clone <repository-url>
 cd priority-board
 
-# Install dependencies
+# Installera beroenden
 npm install
 
-# Start development server
+# Starta utvecklingsserver
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`
+Appen kommer vara tillgänglig på `http://localhost:5173`
 
-### Build for Production
+### Bygg för Produktion
 
 ```bash
-# Type check
+# Typkontroll
 npm run typecheck
 
-# Build optimized bundle
+# Bygg optimerat bundle
 npm run build
 
-# Preview production build
+# Förhandsgranska produktionsbygge
 npm run preview
 ```
 
-## Architecture
+## Arkitektur
 
 ### State Management
-- **Local state**: React's `useState` for component-specific data
-- **Persistent state**: Custom `useLocalStorage` hook syncs state with localStorage
-- **No global state library**: Prop drilling minimized through component composition
+- **Lokalt state**: Reacts `useState` för komponentspecifik data
+- **Beständigt state**: Custom `useLocalStorage` hook synkar state med localStorage
+- **Inget globalt state-bibliotek**: Prop drilling minimerat genom komponentkomposition
 
-### Data Model
+### Datamodell
 ```typescript
 interface Task {
-  id: string;           // Unique identifier (crypto.randomUUID())
-  title: string;        // Task title
-  description: string;  // Task details
-  timeframe: string;    // Estimated completion time
+  id: string;           // Unik identifierare (crypto.randomUUID())
+  title: string;        // Uppgiftstitel
+  description: string;  // Uppgiftsdetaljer
+  timeframe: string;    // Uppskattad färdigställningstid
   columnId: string;     // 'now' | 'next' | 'later'
 }
 ```
 
-### Component Hierarchy
+### Komponenthierarki
 ```
 App
 └── ThemeProvider
     └── Board
         ├── ThemeToggle
-        ├── Column (Now)
+        ├── Column (Nu)
         │   ├── AddTaskForm
         │   └── TaskCard[]
-        ├── Column (Next)
+        ├── Column (Nästa)
         │   ├── AddTaskForm
         │   └── TaskCard[]
-        └── Column (Later)
+        └── Column (Senare)
             ├── AddTaskForm
             └── TaskCard[]
 ```
 
-### Theming System
-Themes use CSS custom properties defined in `src/styles/global.css`:
-- `--color-bg`: Background color
-- `--color-surface`: Card/surface background
-- `--color-text`: Primary text color
-- `--color-text-secondary`: Secondary text color
-- `--color-border`: Border color
-- Theme toggle switches between `.light` and `.dark` classes on `:root`
+### Temasystem
+Teman använder CSS custom properties definierade i `src/styles/global.css`:
+- `--color-bg`: Bakgrundsfärg
+- `--color-surface`: Kort/ytbakgrund
+- `--color-text`: Primär textfärg
+- `--color-text-secondary`: Sekundär textfärg
+- `--color-border`: Kantfärg
+- Temaväxlaren byter mellan `.light` och `.dark` klasser på `:root`
 
-## Development Guidelines
+## Utvecklingsriktlinjer
 
-### Code Style
-- **TypeScript strict mode**: No implicit any, strict null checks
-- **Functional components**: Use hooks for all logic
-- **Early returns**: Guard clauses before happy path
-- **Small functions**: Keep functions under 30 lines
-- **Semantic naming**: `getUserById`, not `getData`
+### Kodstil
+- **TypeScript strict mode**: Ingen implicit any, strikta null-kontroller
+- **Funktionella komponenter**: Använd hooks för all logik
+- **Tidiga returer**: Guard-klausuler före happy path
+- **Små funktioner**: Håll funktioner under 30 rader
+- **Semantisk namngivning**: `getUserById`, inte `getData`
 
-### Component Patterns
-- **Props interface**: Always define explicit prop types
-- **Composition over inheritance**: Use children and render props
-- **Single responsibility**: Each component does one thing well
-- **Controlled inputs**: Forms manage state explicitly
+### Komponentmönster
+- **Props interface**: Definiera alltid explicita prop-typer
+- **Komposition över arv**: Använd children och render props
+- **Singel ansvar**: Varje komponent gör en sak bra
+- **Kontrollerade inputs**: Formulär hanterar state explicit
 
-### CSS Guidelines
-- **Tailwind utilities first**: Prefer utility classes over custom CSS
-- **Responsive design**: Mobile-first with `sm:`, `md:`, `lg:` breakpoints
-- **Accessibility**: Focus states, sufficient contrast (4.5:1), semantic HTML
-- **State variants**: Style hover, focus, active, disabled states
+### CSS-riktlinjer
+- **Tailwind utilities först**: Föredra utility-klasser över custom CSS
+- **Responsiv design**: Mobile-first med `sm:`, `md:`, `lg:` breakpoints
+- **Tillgänglighet**: Focus states, tillräcklig kontrast (4.5:1), semantisk HTML
+- **State-varianter**: Styla hover, focus, active, disabled states
 
-### TypeScript Patterns
+### TypeScript-mönster
 ```typescript
-// Use satisfies for type-safe object literals
+// Använd satisfies för typsäkra objektliteraler
 const config = { ... } satisfies Config;
 
-// Use discriminated unions for state machines
+// Använd discriminated unions för state machines
 type Status =
   | { type: 'idle' }
   | { type: 'loading' }
   | { type: 'success'; data: Task[] }
   | { type: 'error'; error: string };
 
-// Use branded types for type-safe IDs
+// Använd branded types för typsäkra ID:n
 type TaskId = string & { readonly __brand: 'TaskId' };
 ```
 
-## Contributing
+## Bidra
 
-### Getting Started
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/my-feature`
-3. Make your changes following the development guidelines
-4. Run type checking: `npm run typecheck`
-5. Build to verify: `npm run build`
-6. Commit with clear messages: `git commit -m "feat: add task filtering"`
-7. Push to your fork: `git push origin feature/my-feature`
-8. Open a Pull Request
+### Kom Igång
+1. Forka repositoryt
+2. Skapa en feature branch: `git checkout -b feature/min-feature`
+3. Gör dina ändringar enligt utvecklingsriktlinjerna
+4. Kör typkontroll: `npm run typecheck`
+5. Bygg för att verifiera: `npm run build`
+6. Commit med tydliga meddelanden: `git commit -m "feat: lägg till uppgiftsfiltrering"`
+7. Pusha till din fork: `git push origin feature/min-feature`
+8. Öppna en Pull Request
 
-### Commit Convention
-Use conventional commits for clear history:
-- `feat:` New feature
-- `fix:` Bug fix
-- `docs:` Documentation changes
-- `style:` Code style changes (formatting, no logic change)
-- `refactor:` Code refactoring
-- `perf:` Performance improvements
-- `test:` Adding or updating tests
-- `chore:` Maintenance tasks
+### Commit-konvention
+Använd conventional commits för tydlig historik:
+- `feat:` Ny funktion
+- `fix:` Buggfix
+- `docs:` Dokumentationsändringar
+- `style:` Kodstiländringar (formatering, ingen logikändring)
+- `refactor:` Kodrefaktorering
+- `perf:` Prestandaförbättringar
+- `test:` Lägga till eller uppdatera tester
+- `chore:` Underhållsuppgifter
 
-### Pull Request Checklist
-- [ ] Code follows project style guidelines
-- [ ] TypeScript compiles without errors (`npm run typecheck`)
-- [ ] Changes are tested in both light and dark themes
-- [ ] Responsive design works on mobile and desktop
-- [ ] Accessibility: keyboard navigation and screen reader support
-- [ ] No console errors or warnings
-- [ ] Commit messages follow conventional commits
+### Pull Request Checklista
+- [ ] Koden följer projektets stilriktlinjer
+- [ ] TypeScript kompilerar utan fel (`npm run typecheck`)
+- [ ] Ändringar är testade i både ljust och mörkt tema
+- [ ] Responsiv design fungerar på mobil och desktop
+- [ ] Tillgänglighet: tangentbordsnavigering och skärmläsarstöd
+- [ ] Inga konsolfel eller varningar
+- [ ] Commit-meddelanden följer conventional commits
 
-### Areas for Contribution
-- **Task filtering**: Filter by timeframe or search
-- **Task editing**: Inline editing for existing tasks
-- **Drag-and-drop**: Native HTML5 drag-and-drop for reordering
-- **Keyboard shortcuts**: Quick actions (e.g., `n` for new task)
-- **Export/Import**: JSON export/import for backup
-- **Task metadata**: Priority levels, tags, due dates
-- **Animations**: Smooth transitions for task movements
-- **Undo/Redo**: History management for task operations
-- **Multi-board support**: Multiple boards with switching
-- **Collaboration**: Real-time sync (requires backend)
+### Områden för Bidrag
+- **Uppgiftsfiltrering**: Filtrera efter tidsram eller sök
+- **Uppgiftsredigering**: Inline-redigering för befintliga uppgifter
+- **Drag-and-drop**: Native HTML5 drag-and-drop för omordning
+- **Tangentbordsgenvägar**: Snabba åtgärder (t.ex. `n` för ny uppgift)
+- **Export/Import**: JSON export/import för backup
+- **Uppgiftsmetadata**: Prioritetsnivåer, taggar, deadline
+- **Animationer**: Mjuka övergångar för uppgiftsförflyttningar
+- **Ångra/Gör om**: Historikhantering för uppgiftsoperationer
+- **Multi-board support**: Flera tavlor med växling
+- **Samarbete**: Realtidssynk (kräver backend)
 
-## Browser Support
+## Webbläsarstöd
 
 - **Chrome/Edge**: 120+
 - **Firefox**: 120+
 - **Safari**: 17+
 
-Modern browsers with support for:
+Moderna webbläsare med stöd för:
 - CSS Container Queries
 - CSS Nesting
 - `:has()` selector
-- View Transitions API (progressive enhancement)
+- View Transitions API (progressiv förbättring)
 
-## License
+## Licens
 
-MIT License - See LICENSE file for details
+MIT License - Se LICENSE-filen för detaljer
 
-## Acknowledgments
+## Erkännanden
 
-- Design inspired by Material Design 3 guidelines
-- Icons from [Lucide](https://lucide.dev)
-- Built with [Vite](https://vitejs.dev) and [React](https://react.dev)
+- Design inspirerad av Material Design 3-riktlinjer
+- Ikoner från [Lucide](https://lucide.dev)
+- Byggd med [Vite](https://vitejs.dev) och [React](https://react.dev)
