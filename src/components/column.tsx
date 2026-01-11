@@ -58,7 +58,7 @@ export function Column({
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
         className={`flex-1 rounded-xl bg-muted/20 p-3 transition-all duration-200 ${
-          isDragOver ? 'bg-muted/40 ring-2 ring-primary/30' : ''
+          isDragOver ? 'bg-muted/40 ring-2 ring-primary/50 shadow-lg scale-[1.01]' : ''
         }`}
       >
         <div className="space-y-3 mb-3">
