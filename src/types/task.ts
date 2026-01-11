@@ -15,7 +15,7 @@ export interface Column {
 }
 
 export const COLUMNS: Column[] = [
-  { id: 'now', title: 'Now' },
-  { id: 'next', title: 'Next' },
-  { id: 'later', title: 'Later' },
+  { id: 'now', title: 'Nu' },
+  { id: 'next', title: 'Nästa' },
+  { id: 'later', title: 'Senare' },
 ];

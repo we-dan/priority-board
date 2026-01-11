@@ -65,10 +65,10 @@ export function Board() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div>
             <h1 className="text-xl font-semibold text-foreground tracking-tight">
-              Priority Board
+              Prioriteringstavla
             </h1>
             <p className="text-xs text-muted-foreground mt-0.5">
-              Organize tasks by priority and time
+              Organisera uppgifter efter prioritet och tid
             </p>
           </div>
           <ThemeToggle />

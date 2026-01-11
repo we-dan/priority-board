@@ -23,7 +23,7 @@ export function TaskCard({ task, onDelete, onDragStart, onDragEnd }: TaskCardPro
         <button
           onClick={() => onDelete(task.id)}
           className="opacity-0 group-hover:opacity-100 transition-all duration-200 p-1 rounded hover:bg-destructive/10 hover:scale-110 active:scale-95 text-muted-foreground hover:text-destructive"
-          aria-label="Delete task"
+          aria-label="Ta bort uppgift"
         >
           <Trash2 className="w-4 h-4" />
         </button>

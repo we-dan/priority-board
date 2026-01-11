@@ -37,10 +37,10 @@ export function AddTaskForm({ columnId, onAddTask }: AddTaskFormProps) {
         onClick={() => setIsOpen(true)}
         className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-muted/30 active:bg-muted/50 active:scale-[0.98] transition-all duration-200 group"
         data-column={columnId}
-        aria-label={`Add task to ${columnId}`}
+        aria-label={`Lägg till uppgift i ${columnId}`}
       >
         <Plus className="w-4 h-4 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-90" />
-        <span>Add task</span>
+        <span>Lägg till uppgift</span>
       </button>
     );
   }
@@ -51,7 +51,7 @@ export function AddTaskForm({ columnId, onAddTask }: AddTaskFormProps) {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="Task title"
+        placeholder="Uppgiftstitel"
         autoFocus
         className="w-full px-0 py-1 mb-3 text-sm font-medium bg-transparent border-none outline-none text-card-foreground placeholder:text-muted-foreground/50 focus:placeholder:text-muted-foreground/70 transition-all duration-200"
       />
@@ -59,7 +59,7 @@ export function AddTaskForm({ columnId, onAddTask }: AddTaskFormProps) {
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        placeholder="Description (optional)"
+        placeholder="Beskrivning (valfritt)"
         rows={2}
         className="w-full px-0 py-1 mb-3 text-xs bg-transparent border-none outline-none resize-none text-muted-foreground placeholder:text-muted-foreground/50 focus:placeholder:text-muted-foreground/70 transition-all duration-200"
       />
@@ -68,7 +68,7 @@ export function AddTaskForm({ columnId, onAddTask }: AddTaskFormProps) {
         type="text"
         value={timeframe}
         onChange={(e) => setTimeframe(e.target.value)}
-        placeholder="Timeframe (e.g., 2 hours, 3 days)"
+        placeholder="Tidsram (t.ex. 2 timmar, 3 dagar)"
         className="w-full px-2 py-1 mb-4 text-xs bg-muted/30 rounded border border-transparent outline-none text-muted-foreground placeholder:text-muted-foreground/50 focus:bg-muted/50 focus:border-border/50 focus:placeholder:text-muted-foreground/70 transition-all duration-200"
       />
 
@@ -78,13 +78,13 @@ export function AddTaskForm({ columnId, onAddTask }: AddTaskFormProps) {
           disabled={!title.trim()}
           className="flex-1 px-3 py-1.5 text-sm font-medium rounded bg-primary text-primary-foreground shadow-sm hover:shadow-md hover:bg-primary/90 active:scale-[0.97] active:shadow-sm transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-sm disabled:active:scale-100"
         >
-          Add
+          Lägg till
         </button>
         <button
           type="button"
           onClick={handleCancel}
           className="p-1.5 rounded hover:bg-muted/50 active:bg-muted/70 active:scale-95 text-muted-foreground hover:text-foreground transition-all duration-200"
-          aria-label="Cancel"
+          aria-label="Avbryt"
         >
           <X className="w-4 h-4" />
         </button>
